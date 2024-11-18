@@ -3,7 +3,7 @@
 import axios from "axios";
 
 
-export async function compileCode(requestData:any) {
+export async function compileCode(requestData:unknown) {
     const endpoint = 'https://emkc.org/api/v2/piston/execute';
     
     try {

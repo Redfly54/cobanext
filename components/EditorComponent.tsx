@@ -13,6 +13,9 @@ import { useTheme } from "next-themes"
 import { useRef, useState } from "react"
 import { ModeToggleBtn } from "./mode-toggle-btn"
 import SelectLanguages, { selectedLanguageOptionProps } from "./ui/SelectLanguages"
+export interface CodeSnippetsProps {
+  [key: string]: string;
+}
 
 export default function EditorComponent() {
   const {theme} = useTheme()
@@ -92,12 +95,12 @@ export default function EditorComponent() {
           <div className="flex items-center justify-between bg-slate-400 dark:bg-slate-950 px-4 py-2">
             <h2>output</h2>
             {loading?(
-              <Button disabled className="dark:bg-purple-600  dark:hover:bg-purple-700 bg-slate-800 hover:bg-slate-900 text-slate-100 flex space-x-2" size={'sm'}>
+              <Button disabled className="dark:bg-purple-600  dark:hover:bg-purple-700 bg-slate-800 hover:bg-slate-900 text-slate-100 flex space-x-2">
               <Loader className="w-4 h-4 animate-spin"/>
               <span>Running please wait</span>
               </Button>
             ):(
-              <Button onClick={executeCode} className="dark:bg-purple-600  dark:hover:bg-purple-700 bg-slate-800 hover:bg-slate-900 text-slate-100 flex space-x-2" size={'sm'}>
+              <Button onClick={executeCode} className="dark:bg-purple-600  dark:hover:bg-purple-700 bg-slate-800 hover:bg-slate-900 text-slate-100 flex space-x-2">
               <Play className="w-4 h-4"/>
               <span>Run</span>
             </Button>

@@ -1,3 +1,4 @@
+import { CodeSnippetsProps } from "@/components/EditorComponent";
 
 
 export const languageOptions = [
