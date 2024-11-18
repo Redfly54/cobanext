@@ -41,7 +41,7 @@ export default function EditorComponent() {
     setSourceCode(codeSnippets[value.language]);
   }
   async function executeCode() {
-    setLoading(false)
+    setLoading(true)
     const requestData = {
       "language": languageOption.language,
       "version": languageOption.version,
